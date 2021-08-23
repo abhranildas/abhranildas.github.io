@@ -2,20 +2,29 @@
 
 html {
     height: 100%;
-    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 72%, rgba(179,226,255,1) 100%);
 }
 
-body, a {
-	font: normal 1em 'Quicksand', sans-serif;
-    font-weight: 400;
+body {
+    height:  100%;
+    min-height: 300px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 72%, rgba(179,226,255,1) 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font: normal 1em 'Quicksand', sans-serif;
+    font-weight: 500;
     color: #888;
 }
 
+a {
+    color:  #888;
+}
+
 #content {
-	position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -58,25 +67,69 @@ body, a {
 }
 
 .link:hover {
-	color: black;
+    color: rgb(76 186 255);
 }
 
-.icon-photo {
+.link img {
 	margin-bottom: 10px;
-    border: solid 3px white;
     width: 60px;
     border-radius: 50%;
 	box-shadow: 0px 0px 3px 2px #ddd;
 	transition:  box-shadow 0.3s;
 }
 
-.icon-photo:hover {
-	box-shadow: 0px 0px 10px 1px #888;
+
+.link:hover img{
+    box-shadow: 0px 0px 10px 1px rgb(103 197 255);
 }
 
 #my-photo {
-    border: solid 3px white;
     width: 120px;
     border-radius: 50%;
     box-shadow: 0px 0px 3px 2px #ddd;
+}
+
+@media only screen and (max-device-width: 700px) {
+
+body {
+    font-size:  3em;
+}
+
+#content {
+}
+
+#my-card {
+    width: 100%;
+    flex-direction: column;
+    margin-bottom: 100px;
+}
+
+#my-photo {
+    width: 50%;
+}
+
+#name {
+    font-size: 1.7em;
+}
+
+#my-text {
+    margin-left: 0;
+    text-align: center;
+}
+
+#links {
+    flex-direction: column;
+    width: 50%;
+}
+
+.link {
+    flex-direction: row;
+    margin: 2% 0;
+}
+
+.link img {
+    width: 20%;
+    margin-right: 30px;
+}
+
 }
