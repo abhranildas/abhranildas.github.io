@@ -75,12 +75,14 @@ a {
     width: 60px;
     border-radius: 50%;
 	box-shadow: 0px 0px 3px 2px #ddd;
-	transition:  box-shadow 0.3s;
+	transition:  all 0.5s;
+    filter: contrast(50%) brightness(130%);
 }
 
 
 .link:hover img{
-    box-shadow: 0px 0px 10px 1px rgb(103 197 255);
+    filter: none;
+    box-shadow: 0px 0px 10px 3px rgb(103 197 255);
 }
 
 #my-photo {
