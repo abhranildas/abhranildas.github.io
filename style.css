@@ -133,11 +133,11 @@ a {
 	margin-bottom: 10px;
     width: 60px;
     border-radius: 50%;
-	#box-shadow: 0px 0px 3px 2px #ddd;
+	border: 2px solid white;
     box-shadow: 0px 0px 0px 0px rgb(103 197 255);
     animation: shadowColor 30s infinite ease-in-out;
     transition:  all 0.2s;
-    filter: saturate(70%) contrast(70%) brightness(120%);
+    filter: saturate(80%) contrast(70%) brightness(120%);
 }
 
 .link .link-text {
@@ -145,7 +145,7 @@ a {
 }
 
 .link:hover img{    
-    box-shadow: 0px 0px 10px 0px;
+    box-shadow: 0px 0px 15px 0px;
     filter: none;
 }
 
