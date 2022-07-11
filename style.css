@@ -93,7 +93,7 @@ a {
     display: flex;
     align-items: center;
     height: 20vh;
-    #width: 90vw;
+    max-width: 90vw;
     margin-bottom: 5vh;
 }
 
@@ -131,7 +131,7 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    margin: 0 20px 20px 20px;
+    margin: 0 20px 30px 20px;
     text-decoration: none;
     font-size: .9em;
     color: #009eff;
