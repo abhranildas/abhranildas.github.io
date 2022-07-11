@@ -168,13 +168,15 @@ a {
 }
 
 
+/*
+
 @media only screen and (max-device-width: 700px) {
 
 body {
     font-size:  2.5em;
 }
 
-/*
+
 
 #content{
     height: 80vh;
@@ -215,5 +217,6 @@ body {
     margin-right: 30px;
 }
 
-*/
 }
+
+*/
