@@ -16,13 +16,13 @@ body {
     background-color: #009eff;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    animation: bgColor 30s infinite ease-in-out;
+    animation: pageColor 30s infinite ease-in-out;
     font: normal 1em 'Quicksand', sans-serif;
     font-weight: 500;
     color: #888;
 }
 
-@keyframes bgColor {
+@keyframes pageColor {
   0% {
     background-color: #009eff;
   }
@@ -37,6 +37,29 @@ body {
   }
   80% {
     background-color: #c526ff;
+  }
+}
+
+@keyframes photoColor {
+  0% {
+    background-color: #009eff;
+    box-shadow: 1px 1px 1px 0px #009eff;
+  }
+  20% {
+    background-color: #6ed31b;
+    box-shadow: 1px 1px 1px 0px #6ed31b;
+  }
+  40% {
+    background-color: #ffcf00;
+    box-shadow: 1px 1px 1px 0px #ffcf00;
+  }
+  60% {
+    background-color: #fd5757;
+    box-shadow: 1px 1px 1px 0px #fd5757;
+  }
+  80% {
+    background-color: #c526ff;
+    box-shadow: 1px 1px 1px 0px #c526ff;
   }
 }
 
@@ -73,24 +96,6 @@ body {
   }
   80% {
     color: #da75ff;
-  }
-}
-
-@keyframes bgColor {
-  0% {
-    background-color: #009eff;
-  }
-  20% {
-    background-color: #629f1a;
-  }
-  40% {
-    background-color: #d79a1d;
-  }
-  60% {
-    background-color: #fd5757;
-  }
-  80% {
-    background-color: #da75ff;
   }
 }
 
@@ -167,10 +172,10 @@ body {
 #my-photo {
     height: 100%;
     border-radius: 50%;
-    box-shadow: 0px 0px 3px 2px #ddd;
+    box-shadow: 1px 1px 1px 0px #009eff;
     background-color: #009eff;
-    border: 2px solid white;
-    animation: bgColor 30s infinite ease-in-out;
+    #border: 2px solid white;
+    animation: photoColor 30s infinite ease-in-out;
 }
 
 
