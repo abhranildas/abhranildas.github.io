@@ -103,7 +103,7 @@ body {
     display: flex;
     align-items: center;
     height: 17vh;
-    max-width: 95vw;
+    #max-width: 95vw;
     margin-bottom: 5vh;
 }
 
