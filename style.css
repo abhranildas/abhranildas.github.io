@@ -113,7 +113,7 @@ body {
 
 #name {
     font-size: 2em;
-    #font: 2em 'Dongle', sans-serif;
+    display: inline;
     font-weight: 400;
     color: #444;
 }
@@ -122,6 +122,7 @@ body {
     margin-left: 2px;
     font-size: 1.4em;
     color: #444;
+    display: inline;
 }
 
 #subjects {
