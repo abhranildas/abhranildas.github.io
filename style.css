@@ -109,6 +109,8 @@ body {
 
 #my-text {
     margin: 0 0 0 20px;
+    display: inline;
+    white-space: nowrap;
 }
 
 #name {
