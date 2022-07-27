@@ -16,7 +16,7 @@ body {
     background-color: #009eff;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    animation: pageColor 30s infinite ease-in-out;
+    animation: pageColor 10s 2s infinite linear both;
     font: normal 1.5em 'Fredoka', sans-serif;
     font-weight: 300;
     color: #888;
@@ -63,6 +63,21 @@ body {
   }
 }
 
+@keyframes glitchEffect {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  95% {
+    opacity: .8;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 @keyframes shadowColor {
   0% {
     box-shadow: #009eff;
@@ -103,19 +118,39 @@ body {
     display: flex;
     align-items: center;
     height: 17vh;
-    #max-width: 95vw;
     margin-bottom: 5vh;
+}
+
+#my-photo-glitched {
+    border-radius: 50%;
+    height: 100%;
+    width: 17vh;
+    height: 17vh;    
+    position: absolute;
+    opacity: 0;
+}
+
+.glitch {
+    animation: glitchEffect 7s infinite ease both;
+}
+
+#my-photo {
+    border-radius: 50%;
+    box-shadow: 2px 2px 3px 1px #009eff;
+    background-color: #009eff;
+    animation: photoColor 10s 2s infinite linear both;
+    width: 17vh;
+    height: 17vh;
 }
 
 #my-text {
     margin: 0 0 0 20px;
-    display: inline;
     white-space: nowrap;
+    line-height: 1.1em;
 }
 
 #name {
     font-size: 2em;
-    display: inline;
     font-weight: 400;
     color: #444;
 }
@@ -124,7 +159,6 @@ body {
     margin-left: 2px;
     font-size: 1.4em;
     color: #444;
-    display: inline;
 }
 
 #subjects {
@@ -146,7 +180,7 @@ body {
     text-decoration: none;
     font-size: .8em;
     color: #009eff;
-    animation: linkColor 30s infinite ease-in-out;
+    animation: linkColor 10s 2s infinite linear both;
 }
 
 .link img {
@@ -162,6 +196,7 @@ body {
 .link .link-text {
     filter: saturate(0%);
     height: 20%;
+    transition:  all 0.2s;
 }
 
 .link:hover img{    
@@ -172,16 +207,6 @@ body {
 .link:hover .link-text{    
     filter: none;
 }
-
-#my-photo {
-    height: 100%;
-    border-radius: 50%;
-    box-shadow: 2px 2px 3px 1px #009eff;
-    background-color: #009eff;
-    #border: 2px solid white;
-    animation: photoColor 30s infinite ease-in-out;
-}
-
 
 @media only screen and (max-device-width: 700px) and (orientation:portrait) {
 
