@@ -19,7 +19,7 @@ body {
     animation: pageColor 10s 2s infinite linear both;
     font: normal 1.5em 'Fredoka', sans-serif;
     font-weight: 300;
-    color: #888;
+    color: #444;
 }
 
 @keyframes pageColor {
@@ -63,20 +63,6 @@ body {
   }
 }
 
-@keyframes glitchEffect {
-  0% {
-    opacity: 0;
-  }
-  90% {
-    opacity: 0;
-  }
-  95% {
-    opacity: .8;
-  }
-  100% {
-    opacity: 0;
-  }
-}
 
 @keyframes shadowColor {
   0% {
@@ -130,10 +116,6 @@ body {
     opacity: 0;
 }
 
-.glitch {
-    animation: glitchEffect 7s infinite ease both;
-}
-
 #my-photo {
     border-radius: 50%;
     box-shadow: 2px 2px 3px 1px #009eff;
@@ -149,20 +131,19 @@ body {
     line-height: 1.1em;
 }
 
-#name {
+.name {
     font-size: 2em;
     font-weight: 400;
-    color: #444;
 }
 
-#phd {
+.phd {
     margin-left: 2px;
     font-size: 1.4em;
-    color: #444;
 }
 
-#subjects {
+.subjects {
     font-size: .78em;
+    color: #888;
 }
 
 #links {
