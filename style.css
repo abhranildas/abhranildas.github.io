@@ -25,79 +25,79 @@ body {
 @keyframes pageColor {
   0% {
     background-color: #009eff;
-  }
-  20% {
+}
+20% {
     background-color: #6ed31b;
-  }
-  40% {
+}
+40% {
     background-color: #ffcf00;
-  }
-  60% {
+}
+60% {
     background-color: #fd5757;
-  }
-  80% {
+}
+80% {
     background-color: #c526ff;
-  }
+}
 }
 
 @keyframes photoColor {
   0% {
     background-color: #009eff;
     box-shadow: 2px 2px 3px 1px #009eff;
-  }
-  20% {
+}
+20% {
     background-color: #6ed31b;
     box-shadow: 2px 2px 3px 1px #6ed31b;
-  }
-  40% {
+}
+40% {
     background-color: #ffcf00;
     box-shadow: 2px 2px 3px 1px #ffcf00;
-  }
-  60% {
+}
+60% {
     background-color: #fd5757;
     box-shadow: 2px 2px 3px 1px #fd5757;
-  }
-  80% {
+}
+80% {
     background-color: #c526ff;
     box-shadow: 2px 2px 3px 1px #c526ff;
-  }
+}
 }
 
 
 @keyframes shadowColor {
   0% {
     box-shadow: #009eff;
-  }
-  20% {
+}
+20% {
     box-shadow: #6ed31b;
-  }
-  40% {
+}
+40% {
     box-shadow: #ffcf00;
-  }
-  60% {
+}
+60% {
     box-shadow: #fd5757;
-  }
-  80% {
+}
+80% {
     box-shadow: #c526ff;
-  }
+}
 }
 
 @keyframes linkColor {
   0% {
     color: #009eff;
-  }
-  20% {
+}
+20% {
     color: #629f1a;
-  }
-  40% {
+}
+40% {
     color: #d79a1d;
-  }
-  60% {
+}
+60% {
     color: #fd5757;
-  }
-  80% {
+}
+80% {
     color: #da75ff;
-  }
+}
 }
 
 #my-card {
@@ -187,43 +187,53 @@ body {
     text-shadow: 0 0 10px 10px white;
 }
 
+.glitch {
+  position: absolute;
+  opacity: 0;
+}
+
+
+@media only screen and (max-device-width: 700px) {
+
+    body {
+        font-weight: 400;
+    }
+
+}
+
 @media only screen and (max-device-width: 700px) and (orientation:portrait) {
 
-body {
-    font-size:  2.5em;
-    font-weight: 400;
-}
+    body {
+        font-size:  2.5em;
+    }
 
-#my-card {
-    flex-direction:  column;
-    margin-bottom: 2em;
-    text-align: center;
-}
+    #my-card {
+        flex-direction:  column;
+        margin-bottom: 2em;
+        text-align: center;
+    }
 
-.my-photo {
-    width: 8em;
-    height: 8em;
-}
+    .my-photo {
+        width: 8em;
+        height: 8em;
+    }
 
-#my-text {
-    margin: 3vh 0 0 0;
-}
+    #my-text {
+        margin: 3vh 0 0 0;
+    }
 
 }
 
 @media only screen and (max-device-width: 700px) and (orientation:landscape) {
 
-body {
-    font-size:  1.8em;
-    font-weight: 400;
+    body {
+        font-size:  1.8em;
+    }
+
 }
 
-#my-card {
-    #height:  25vh;
-}
-
-#links {
-    #height:  20vh;
-}
-
+@media (any-hover: none) {
+    .glitch {
+      animation: glitchEffect 20s infinite linear both;
+  }
 }

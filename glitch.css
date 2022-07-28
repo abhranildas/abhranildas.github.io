@@ -6,7 +6,7 @@
     opacity: 0;
   }
   21% {
-    opacity: .5;
+    opacity: 1;
   }
   22% {
     opacity: 0;
@@ -27,7 +27,7 @@
     opacity: 0;
   }
   80% {
-    opacity: .2;
+    opacity: .3;
   }
   90% {
     opacity: 0;
@@ -37,10 +37,7 @@
   }
 }
 
-.glitch {
-  position: absolute;
-  opacity: 0;
-  animation: glitchEffect 20s infinite linear both;
+#my-text .glitch {
   background-color: white;
 }
 
