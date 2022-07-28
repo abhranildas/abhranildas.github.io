@@ -14,10 +14,13 @@
   40% {
     opacity: 0;
   }
-  50% {
+  43% {
     opacity: 1;
   }
-  60% {
+  47% {
+    opacity: 1;
+  }
+  50% {
     opacity: 0;
   }
   70% {
@@ -26,17 +29,18 @@
   80% {
     opacity: .2;
   }
+  90% {
+    opacity: 0;
+  }
   100% {
     opacity: 0;
   }
 }
 
 .glitch {
-    animation: glitchEffect 20s infinite linear both;
-}
-
-#name-glitched {
   position: absolute;
+  opacity: 0;
+  animation: glitchEffect 20s infinite linear both;
   background-color: white;
 }
 
