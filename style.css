@@ -2,6 +2,11 @@
 
 html {
     height: 100%;
+    #cursor: none;
+}
+
+a {
+    #cursor: none;
 }
 
 body {
@@ -21,6 +26,49 @@ body {
     #font-weight: 300;
     color: #444;
 }
+
+#cursor {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 9999;
+  animation: cursorColor 10s 2s infinite linear both;
+  background-image: url('images/cursor.png');
+  background-size: cover;
+  #background-color: red;
+  #background-blend-mode: color;
+  #background-color: #009eff;
+  #box-shadow: 0 0 20px 20px white;
+  #border-radius: 0 50% 50% 50%;
+  opacity: 1;
+  #border: 2px solid white;
+  height: 1.2em;
+  width: 1.2em;
+  #margin-top: 0em;
+  #margin-left: 0em;
+}
+
+@keyframes cursorColor {
+  0% {
+    filter: hue-rotate(-60deg);
+}
+20% {
+    filter: hue-rotate(-160deg);
+}
+40% {
+    filter: hue-rotate(-240deg);
+}
+60% {
+    filter: hue-rotate(-270deg);
+}
+80% {
+    filter: hue-rotate(-360deg);
+}
+100% {
+    filter: hue-rotate(-420deg);
+}
+}
+
 
 @keyframes pageColor {
   0% {
@@ -190,6 +238,7 @@ body {
 .glitch {
   position: absolute;
   opacity: 0;
+#  transition: opacity .2s;
 }
 
 
