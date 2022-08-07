@@ -281,8 +281,8 @@ body {
 
 }
 
-@media (any-hover: none) {
+/* @media (any-hover: none) {
     .glitch {
       animation: glitchEffect 20s infinite linear both;
-  }
+  } */
 }
