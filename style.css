@@ -281,8 +281,12 @@ body {
 
 }
 
-/* @media (any-hover: none) {
-    .glitch {
+@media (any-hover: none) {
+/*    .glitch {
       animation: glitchEffect 20s infinite linear both;
   } */
+  .icon-img {
+    filter: saturate(70%) contrast(70%) brightness(120%);
+}
+
 }
