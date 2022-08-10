@@ -5,10 +5,6 @@ html {
     #cursor: none;
 }
 
-a {
-    #cursor: none;
-}
-
 body {
     height:  100%;
     display: flex;
@@ -19,86 +15,25 @@ body {
     background-color: #009eff;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    animation: pageColor 10s 2s infinite linear both;
+    animation: cycleColor 10s 2s infinite linear;
     font: 300 1.5em 'Fredoka', sans-serif;
     color: #444;
-}
-
-#cursor {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 9999;
-  animation: cursorColor 10s 2s infinite linear both;
-  background-image: url('images/cursor.png');
-  background-size: cover;
-  #background-color: red;
-  #background-blend-mode: color;
-  #background-color: #009eff;
-  #box-shadow: 0 0 20px 20px white;
-  #border-radius: 0 50% 50% 50%;
-  opacity: 1;
-  #border: 2px solid white;
-  height: 1.2em;
-  width: 1.2em;
-  #margin-top: 0em;
-  #margin-left: 0em;
+    perspective: 10em;
 }
 
 @keyframes appear {
 0% {
     filter: blur(10px);
     opacity: 0;
-    transform: scale(.9,.9) perspective(20em) rotateX(-20deg);
+    transform: scale(.9,.9) rotateX(-20deg);
 }
 100% {
     filter: blur(0px);
     opacity: 1;
-    transform: none;
 }
 }
 
-@keyframes cursorColor {
-  0% {
-    filter: hue-rotate(-60deg);
-}
-20% {
-    filter: hue-rotate(-160deg);
-}
-40% {
-    filter: hue-rotate(-240deg);
-}
-60% {
-    filter: hue-rotate(-270deg);
-}
-80% {
-    filter: hue-rotate(-360deg);
-}
-100% {
-    filter: hue-rotate(-420deg);
-}
-}
-
-
-@keyframes pageColor {
-  0% {
-    background-color: #009eff;
-}
-20% {
-    background-color: #6ed31b;
-}
-40% {
-    background-color: #ffcf00;
-}
-60% {
-    background-color: #fd5757;
-}
-80% {
-    background-color: #c526ff;
-}
-}
-
-@keyframes photoColor {
+@keyframes cycleColor {
 0% {
     background-color: #009eff;
     box-shadow: 2px 2px 3px 1px #009eff;
@@ -165,10 +100,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    opacity: 0;
-    filter: blur(10px);
-    animation: appear 3s ease-in-out both;
-    transform: scale(.9,.9) perspective(20em) rotateX(-20deg);
+    animation: appear 3s ease-in-out;
+    transition: transform .5s;
 }
 
 #my-card {
@@ -209,7 +142,7 @@ body {
 
 #links {
     text-align: center;
-    #height: 12vh;
+    pointer-events: none;
 }
 
 .link {
@@ -222,24 +155,21 @@ body {
     font-size: .8em;
     color: #009eff;
     animation: linkColor 10s 2s infinite linear both;
+    transition: filter .3s ease-in-out, transform .3s ease-out;
+    pointer-events: auto;
 }
 
 .icon-img {
     height: 3.5em;
     width: 3.5em;
+    margin-bottom: 0.3em;
     border-radius: 50%;
-    border: 5px solid white;
+    border: 1px solid white;
     background-color: white;
     box-shadow: 0px 0px 0px 0px rgb(103 197 255);
     animation: shadowColor 10s 2s infinite linear both;
-    transition: box-shadow 0.5s ease-out, filter 0.5s ease-out, transform 0.5s ease-out;
+    transition: box-shadow 0.3s ease-out, filter 0.3s ease-out;
     filter: saturate(60%) contrast(60%) brightness(130%);
-}
-
-.icon-img-glitch {
-    height: 4em;
-    width: 4em;
-    border-radius: 50%;
 }
 
 .link-text {
@@ -247,20 +177,31 @@ body {
     transition: filter 0.2s, text-shadow 0.2s;
 }
 
+.link:hover {
+    transform: scale(1.05,1.05) translateY(-.3em) perspective(10em) rotateX(20deg) translateZ(.5em);
+}
+
 .link:hover .icon-img{    
-    box-shadow: 3px 10px 10px -5px;
+    box-shadow: 0px 15px 15px -10px;
     filter: none;
-    transform: scale(1.05,1.05) translate(0,-.3em) perspective(10em) rotateY(0deg) rotateX(15deg);
 }
 
 .link:hover .link-text{    
     filter: none;
 }
 
+#links:hover > .link{
+    filter: blur(5px);
+}
+
+#links .link:hover {
+    filter: blur(0); 
+}
+
 .glitch {
   position: absolute;
   opacity: 0;
-  animation: glitchEffect 40s infinite linear both;
+  animation: glitchEffect 40s infinite linear;
 }
 
 
