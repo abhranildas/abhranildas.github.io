@@ -15,7 +15,7 @@ body {
     background-color: #009eff;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    animation: cycleColor 10s 2s infinite linear;
+    animation: cycleColor 10s 2s infinite linear both;
     font: 300 1.5em 'Fredoka', sans-serif;
     color: #444;
     perspective: 10em;
@@ -114,7 +114,7 @@ body {
     border-radius: 50%;
     box-shadow: 2px 2px 3px 1px #009eff;
     background-color: #009eff;
-    animation: photoColor 10s 2s infinite linear both;
+    animation: cycleColor 10s 2s infinite linear both;
     width: 6em;
     height: 6em;
 }
