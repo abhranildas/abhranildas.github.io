@@ -27,15 +27,9 @@ body {
     opacity: 0;
     transform: scale(.9,.9) rotateX(-20deg);
 }
-30% {
+100% {
     filter: blur(0px);
     opacity: 1;
-    transform: none;
-}
-75% {
-    transform: none;
-}
-100% {
     transform: none;
 }
 }
