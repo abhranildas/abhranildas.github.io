@@ -18,7 +18,7 @@ body {
     animation: cycleColor 10s 2s infinite linear both;
     font: 300 1.3em 'Fredoka', sans-serif;
     color: #444;
-    perspective: 500px;
+    perspective: 100vh;
 }
 
 @keyframes appear {
