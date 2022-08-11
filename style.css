@@ -155,7 +155,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    animation: appear 10s linear backwards, rotate 20s 10s infinite linear;
+    animation: appear 10s linear backwards;
+    #rotate 20s 10s infinite linear;
     transition: transform 0.2s;
 }
 
