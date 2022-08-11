@@ -51,8 +51,8 @@
   var update = function(event) {
     mouse.updatePosition(event);
     updateTransformStyle(
-      (5*mouse.y / inner.offsetHeight).toFixed(2),
-      (5*mouse.x / inner.offsetWidth).toFixed(2)
+      (2*mouse.y / inner.offsetHeight).toFixed(2),
+      (2*mouse.x / inner.offsetWidth).toFixed(2)
     );
   };
 

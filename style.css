@@ -16,9 +16,9 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     animation: cycleColor 10s 2s infinite linear both;
-    font: 300 1.5em 'Fredoka', sans-serif;
+    font: 300 1.3em 'Fredoka', sans-serif;
     color: #444;
-    perspective: 10em;
+    perspective: 1000px;
 }
 
 @keyframes appear {
@@ -142,7 +142,7 @@ body {
 
 #links {
     text-align: center;
-    pointer-events: none;
+    #pointer-events: none;
 }
 
 .link {
@@ -156,7 +156,7 @@ body {
     color: #009eff;
     animation: linkColor 10s 2s infinite linear both;
     transition: filter .3s ease-in-out, transform .3s ease-out;
-    pointer-events: auto;
+    #pointer-events: auto;
 }
 
 .icon-img {
@@ -191,11 +191,11 @@ body {
 }
 
 #links:hover > .link{
-    filter: blur(5px);
+    #filter: blur(5px);
 }
 
 #links .link:hover {
-    filter: blur(0); 
+    #filter: blur(0); 
 }
 
 .glitch {
@@ -216,7 +216,7 @@ body {
 @media only screen and (max-device-width: 700px) and (orientation:portrait) {
 
     body {
-        font-size:  2.5em;
+        font-size:  3em;
     }
 
     #my-card {
