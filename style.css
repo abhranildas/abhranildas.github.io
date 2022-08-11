@@ -27,10 +27,13 @@ body {
     opacity: 0;
     transform: scale(.9,.9) rotateX(-20deg);
 }
-100% {
+50% {
     filter: blur(0px);
     opacity: 1;
     transform: none;
+}
+100% {
+    transform: rotateX(7deg) rotateY(5deg);
 }
 }
 
@@ -149,6 +152,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transform: rotateX(7deg) rotateY(5deg);
     animation: appear 10s linear backwards;
     #rotate 20s 10s infinite linear;
 }
@@ -266,7 +270,7 @@ body {
 
     body {
         font-size:  2.8em;
-        perspective: 5000px;
+        perspective: 1000px;
     }
 
     #my-card {
@@ -290,7 +294,6 @@ body {
 
     body {
         font-size:  1.8em;
-        perspective: 1000px;
     }
 
 }
