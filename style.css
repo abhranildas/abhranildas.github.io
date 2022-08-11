@@ -30,10 +30,10 @@ body {
 30% {
     filter: blur(0px);
     opacity: 1;
-    transform: scale(1,1) rotateX(0deg);
+    transform: none;
 }
 75% {
-    transform: scale(1,1) rotateX(0deg);
+    transform: none;
 }
 100% {
     transform: rotateX(7deg) rotateY(5deg);
@@ -156,7 +156,7 @@ body {
     justify-content: center;
     align-items: center;
     animation: appear 10s linear backwards, rotate 20s 10s infinite linear;
-    #transform-origin: center;
+    transition: transform 0.2s;
 }
 
 #my-card {
