@@ -153,7 +153,7 @@ body {
     justify-content: center;
     align-items: center;
     transform: rotateX(7deg) rotateY(5deg);
-    animation: appear 10s linear backwards, rotate 20s 10s infinite linear;
+    animation: appear 10s linear backwards, rotate 20s 15s infinite linear;
 }
 
 #my-card {
