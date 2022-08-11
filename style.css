@@ -35,6 +35,9 @@ body {
 75% {
     transform: none;
 }
+100% {
+    transform: none;
+}
 }
 
 @keyframes rotate {
