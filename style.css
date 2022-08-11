@@ -157,7 +157,6 @@ body {
     align-items: center;
     animation: appear 10s linear backwards;
     #rotate 20s 10s infinite linear;
-    transition: transform 0.2s;
 }
 
 #my-card {
@@ -273,7 +272,7 @@ body {
 
     body {
         font-size:  2.8em;
-        perspective: 1000px;
+        perspective: 5000px;
     }
 
     #my-card {
@@ -297,6 +296,7 @@ body {
 
     body {
         font-size:  1.8em;
+        perspective: 1000px;
     }
 
 }
