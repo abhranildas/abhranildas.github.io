@@ -22,111 +22,111 @@ body {
 }
 
 @keyframes appear {
-0% {
-    filter: blur(10px);
-    opacity: 0;
-    transform: scale(.9,.9) rotateX(-20deg);
-}
-50% {
-    filter: blur(0px);
-    opacity: 1;
-    transform: none;
-}
-100% {
-    transform: rotateX(7deg) rotateY(5deg);
-}
+    0% {
+        filter: blur(10px);
+        opacity: 0;
+        transform: scale(.9,.9) rotateX(-20deg);
+    }
+    50% {
+        filter: blur(0px);
+        opacity: 1;
+        transform: none;
+    }
+    100% {
+        transform: rotateX(7deg) rotateY(5deg);
+    }
 }
 
 @keyframes rotate {
-0% {
-    transform: rotateX(7deg) rotateY(5deg);
-}
-12.5% {
-    transform: rotateX(0deg) rotateY(7deg);
-}
-25% {
-    transform: rotateX(-7deg) rotateY(5deg);
-}
-37.5% {
-    transform: rotateX(-12deg) rotateY(0deg);
-}
-50% {
-    transform: rotateX(-7deg) rotateY(-5deg);
-}
-62.5% {
-    transform: rotateX(0deg) rotateY(-7deg);
-}
-75% {
-    transform: rotateX(7deg) rotateY(-5deg);
-}
-87.5% {
-    transform: rotateX(12deg) rotateY(0deg);
-}
-100% {
-    transform: rotateX(7deg) rotateY(5deg);
-}
+    0% {
+        transform: rotateX(7deg) rotateY(5deg);
+    }
+    12.5% {
+        transform: rotateX(0deg) rotateY(7deg);
+    }
+    25% {
+        transform: rotateX(-7deg) rotateY(5deg);
+    }
+    37.5% {
+        transform: rotateX(-12deg) rotateY(0deg);
+    }
+    50% {
+        transform: rotateX(-7deg) rotateY(-5deg);
+    }
+    62.5% {
+        transform: rotateX(0deg) rotateY(-7deg);
+    }
+    75% {
+        transform: rotateX(7deg) rotateY(-5deg);
+    }
+    87.5% {
+        transform: rotateX(12deg) rotateY(0deg);
+    }
+    100% {
+        transform: rotateX(7deg) rotateY(5deg);
+    }
 }
 
 @keyframes pageColor {
-0% {
-    background-color: #009eff;
-}
-20% {
-    background-color: #6ed31b;
-}
-40% {
-    background-color: #ffcf00;
-}
-60% {
-    background-color: #fd5757;
-}
-80% {
-    background-color: #c526ff;
-}
+    0% {
+        background-color: #009eff;
+    }
+    20% {
+        background-color: #6ed31b;
+    }
+    40% {
+        background-color: #ffcf00;
+    }
+    60% {
+        background-color: #fd5757;
+    }
+    80% {
+        background-color: #c526ff;
+    }
 }
 
 @keyframes photoColor {
-0% {
-    background-color: #009eff;
-    box-shadow: 2px 2px 3px 1px #009eff;
-}
-20% {
-    background-color: #6ed31b;
-    box-shadow: 2px 2px 3px 1px #6ed31b;
-}
-40% {
-    background-color: #ffcf00;
-    box-shadow: 2px 2px 3px 1px #ffcf00;
-}
-60% {
-    background-color: #fd5757;
-    box-shadow: 2px 2px 3px 1px #fd5757;
-}
-80% {
-    background-color: #c526ff;
-    box-shadow: 2px 2px 3px 1px #c526ff;
-}
+    0% {
+        background-color: #009eff;
+        box-shadow: 2px 2px 3px 1px #009eff;
+    }
+    20% {
+        background-color: #6ed31b;
+        box-shadow: 2px 2px 3px 1px #6ed31b;
+    }
+    40% {
+        background-color: #ffcf00;
+        box-shadow: 2px 2px 3px 1px #ffcf00;
+    }
+    60% {
+        background-color: #fd5757;
+        box-shadow: 2px 2px 3px 1px #fd5757;
+    }
+    80% {
+        background-color: #c526ff;
+        box-shadow: 2px 2px 3px 1px #c526ff;
+    }
 }
 
 @keyframes shadowColor {
-0% {
-    box-shadow: #009eff;
-}
-20% {
-    box-shadow: #6ed31b;
-}
-40% {
-    box-shadow: #ffcf00;
-}
-60% {
-    box-shadow: #fd5757;
-}
-80% {
-    box-shadow: #c526ff;
-}
-100% {
-    box-shadow: #009eff;
-}
+    0% {
+        box-shadow: #009eff;
+    }
+    20% {
+        box-shadow: #6ed31b;
+    }
+    40% {
+        box-shadow: #ffcf00;
+    }
+    60% {
+        box-shadow: #fd5757;
+    }
+    80% {
+        box-shadow: #c526ff;
+    }
+    100% {
+        box-shadow: #009eff;
+    }
 }
 
 @keyframes linkColor {
@@ -153,7 +153,8 @@ body {
     justify-content: center;
     align-items: center;
     transform: rotateX(7deg) rotateY(5deg);
-    animation: appear 10s linear backwards, rotate 20s 15s infinite linear;
+    animation: appear 2s linear backwards, rotate 20s 5s infinite linear;
+    transition: transform .2s;
 }
 
 #my-card {
