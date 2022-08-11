@@ -11,14 +11,14 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: radial-gradient(circle, rgba(255,255,255,1) 70%, rgba(255,255,255,0.8) 90% , rgba(255,255,255,.6) 100%);
+    background: radial-gradient(circle, rgba(255,255,255,1) 70%, rgba(255,255,255,0.8) 90%, rgba(255,255,255,.6) 100%);
     background-color: #009eff;
     background-repeat: no-repeat;
     background-attachment: fixed;
     animation: cycleColor 10s 2s infinite linear both;
     font: 300 1.3em 'Fredoka', sans-serif;
     color: #444;
-    perspective: 1000px;
+    perspective: 500px;
 }
 
 @keyframes appear {
@@ -27,11 +27,49 @@ body {
     opacity: 0;
     transform: scale(.9,.9) rotateX(-20deg);
 }
-100% {
+30% {
     filter: blur(0px);
     opacity: 1;
+    transform: none;
+}
+75% {
+    transform: none;
+}
+100% {
+    transform: rotateX(7deg) rotateY(0deg);
 }
 }
+
+@keyframes rotate {
+0% {
+    transform: rotateX(7deg) rotateY(0deg);
+}
+12.5% {
+    transform: rotateX(5deg) rotateY(5deg);
+}
+25% {
+    transform: rotateX(0deg) rotateY(7deg);
+}
+37.5% {
+    transform: rotateX(-5deg) rotateY(5deg);
+}
+50% {
+    transform: rotateX(-7deg) rotateY(0deg);
+}
+62.5% {
+    transform: rotateX(-5deg) rotateY(-5deg);
+}
+75% {
+    transform: rotateX(0deg) rotateY(-7deg);
+}
+87.5% {
+    transform: rotateX(5deg) rotateY(-5deg);
+}
+100% {
+    transform: rotateX(7deg) rotateY(0deg);
+}
+}
+
 
 @keyframes cycleColor {
 0% {
@@ -100,8 +138,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    animation: appear 3s ease-in-out;
-    transition: transform .5s;
+    animation: appear 10s ease-in-out, rotate 30s 10s infinite linear;
+    #transition: transform 1s;
 }
 
 #my-card {
