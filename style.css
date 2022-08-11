@@ -15,10 +15,10 @@ body {
     background-color: #009eff;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    animation: cycleColor 10s 2s infinite linear both;
+    animation: pageColor 10s 2s infinite linear both;
     font: 300 1.3em 'Fredoka', sans-serif;
     color: #444;
-    perspective: 100vh;
+    perspective: 500px;
 }
 
 @keyframes appear {
@@ -36,42 +36,59 @@ body {
     transform: none;
 }
 100% {
-    transform: rotateX(7deg) rotateY(0deg);
+    transform: rotateX(12deg) rotateY(0deg);
 }
 }
 
 @keyframes rotate {
 0% {
-    transform: rotateX(7deg) rotateY(0deg);
+    transform: rotateX(12deg) rotateY(0deg);
 }
 12.5% {
-    transform: rotateX(5deg) rotateY(5deg);
+    transform: rotateX(7deg) rotateY(5deg);
 }
 25% {
     transform: rotateX(0deg) rotateY(7deg);
 }
 37.5% {
-    transform: rotateX(-5deg) rotateY(5deg);
+    transform: rotateX(-7deg) rotateY(5deg);
 }
 50% {
-    transform: rotateX(-7deg) rotateY(0deg);
+    transform: rotateX(-12deg) rotateY(0deg);
 }
 62.5% {
-    transform: rotateX(-5deg) rotateY(-5deg);
+    transform: rotateX(-7deg) rotateY(-5deg);
 }
 75% {
     transform: rotateX(0deg) rotateY(-7deg);
 }
 87.5% {
-    transform: rotateX(5deg) rotateY(-5deg);
+    transform: rotateX(7deg) rotateY(-5deg);
 }
 100% {
-    transform: rotateX(7deg) rotateY(0deg);
+    transform: rotateX(12deg) rotateY(0deg);
 }
 }
 
+@keyframes pageColor {
+0% {
+    background-color: #009eff;
+}
+20% {
+    background-color: #6ed31b;
+}
+40% {
+    background-color: #ffcf00;
+}
+60% {
+    background-color: #fd5757;
+}
+80% {
+    background-color: #c526ff;
+}
+}
 
-@keyframes cycleColor {
+@keyframes photoColor {
 0% {
     background-color: #009eff;
     box-shadow: 2px 2px 3px 1px #009eff;
@@ -138,8 +155,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    animation: appear 10s ease-in-out, rotate 30s 10s infinite linear;
-    #transition: transform 1s;
+    animation: appear 10s ease-in-out, rotate 20s 10s infinite linear;
+    transform-origin: center;
 }
 
 #my-card {
@@ -152,7 +169,7 @@ body {
     border-radius: 50%;
     box-shadow: 2px 2px 3px 1px #009eff;
     background-color: #009eff;
-    animation: cycleColor 10s 2s infinite linear both;
+    animation: photoColor 10s 2s infinite linear both;
     width: 6em;
     height: 6em;
 }
@@ -255,6 +272,7 @@ body {
 
     body {
         font-size:  2.8em;
+        perspective: 1000px;
     }
 
     #my-card {
