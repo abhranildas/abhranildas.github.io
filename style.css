@@ -25,15 +25,22 @@ body {
     0% {
         filter: blur(10px);
         opacity: 0;
-        #transform: scale(.9,.9) rotateX(-20deg);
+        transform: scale(.9,.9);
     }
     100% {
         filter: blur(0px);
         opacity: 1;
+        transform: none;
     }
 }
 
-@keyframes rotate {
+@keyframes rotate1 {
+    100% {
+        transform: rotateX(7deg) rotateY(5deg);
+    }
+}
+
+@keyframes rotate2 {
     0% {
         transform: rotateX(7deg) rotateY(5deg);
     }
@@ -149,7 +156,12 @@ body {
     justify-content: center;
     align-items: center;
     #transform: rotateX(7deg) rotateY(5deg);
-    animation: appear 2s linear both;
+    animation: appear 2s linear backwards, rotate1 3s 5s linear, rotate2 25s 8s infinite linear;
+    pointer-events: none;
+}
+
+#content:hover {
+  animation-play-state: paused;
 }
 
 #my-card {
@@ -204,7 +216,7 @@ body {
     color: #009eff;
     animation: linkColor 10s 2s infinite linear both;
     transition: filter .3s ease-in-out, transform .3s ease-out;
-    #pointer-events: auto;
+    pointer-events: auto;
 }
 
 .icon-img {
@@ -257,6 +269,10 @@ body {
 
     body {
         font-weight: 400;
+    }
+
+    #content {
+        animation: appear 2s linear both;
     }
 
 }
