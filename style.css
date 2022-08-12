@@ -156,7 +156,7 @@ body {
     justify-content: center;
     align-items: center;
     #transform: rotateX(7deg) rotateY(5deg);
-    animation: appear 2s linear backwards, rotate1 3s 5s linear, rotate2 25s 8s infinite linear;
+    animation: appear 2s ease-out backwards, rotate1 3s 5s linear, rotate2 25s 8s infinite linear;
     pointer-events: none;
 }
 
@@ -272,7 +272,7 @@ body {
     }
 
     #content {
-        animation: appear 2s linear both;
+        animation: appear 2s ease-out both;
     }
 
 }
@@ -280,7 +280,7 @@ body {
 @media only screen and (max-device-width: 700px) and (orientation:portrait) {
 
     body {
-        font-size:  2.8em;
+        font-size:  3em;
         perspective: 1000px;
     }
 
