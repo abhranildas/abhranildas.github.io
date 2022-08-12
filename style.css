@@ -27,9 +27,12 @@ body {
         opacity: 0;
         transform: scale(.9,.9) rotateX(-20deg);
     }
-    50% {
+    30% {
         filter: blur(0px);
         opacity: 1;
+        transform: none;
+    }
+    70% {
         transform: none;
     }
     100% {
@@ -153,8 +156,7 @@ body {
     justify-content: center;
     align-items: center;
     transform: rotateX(7deg) rotateY(5deg);
-    animation: appear 5s linear backwards, rotate 20s 5s infinite linear;
-    transition: transform .2s;
+    animation: appear 7s linear backwards, rotate 20s 7s infinite linear;
 }
 
 #my-card {
@@ -262,11 +264,6 @@ body {
 
     body {
         font-weight: 400;
-    }
-
-    #content {
-        max-width: 90vw;
-        max-height: 90vh;
     }
 
 }
