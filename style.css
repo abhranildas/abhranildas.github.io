@@ -25,18 +25,11 @@ body {
     0% {
         filter: blur(10px);
         opacity: 0;
-        transform: scale(.9,.9) rotateX(-20deg);
-    }
-    30% {
-        filter: blur(0px);
-        opacity: 1;
-        transform: none;
-    }
-    70% {
-        transform: none;
+        #transform: scale(.9,.9) rotateX(-20deg);
     }
     100% {
-        transform: rotateX(7deg) rotateY(5deg);
+        filter: blur(0px);
+        opacity: 1;
     }
 }
 
@@ -155,8 +148,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transform: rotateX(7deg) rotateY(5deg);
-    animation: appear 7s linear backwards, rotate 20s 7s infinite linear;
+    #transform: rotateX(7deg) rotateY(5deg);
+    animation: appear 2s linear both;
 }
 
 #my-card {
