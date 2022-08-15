@@ -318,7 +318,7 @@ body {
         text-align: center;
     }
 
-    .my-photo {
+    .my-photo, .my-photo-bg {
         width: 8em;
         height: 8em;
     }
@@ -341,7 +341,7 @@ body {
 /*    .glitch {
       animation: glitchEffect 20s infinite linear both;
   } */
-  .icon-img {
+  .link {
     filter: saturate(70%) contrast(70%) brightness(120%);
 }
 
