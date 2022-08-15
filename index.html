@@ -16,313 +16,67 @@
 	<link rel='stylesheet' href='style.css' type='text/css' media='all'>
 	<link rel='stylesheet' href='glitch.css' type='text/css' media='all'>
 	<link rel='icon' href='images/icon.png'/>      
+	<script type='text/javascript' src='hover-colour.js'></script>
 
 </head>
 
 <body>
+	<div id='hover-bg'></div>
 	<div id='content'>
-		<div id='my-card'>		
-			<img class='my-photo' src='images/me.png'>
+		<div id='my-card'>
+			<div class='my-photo-bg'></div>
+			<div class='my-photo-bg' id='my-photo-bg-hover'></div>
+			<img class='my-photo' id='my-photo-original' src='images/me.png'>
 			<img class='my-photo glitch' src='images/me_glitched.gif'>
 			<div id='my-text'>
-			<!-- <div class='glitch'>
-				<div class='line'>
-					<span class='name'>Abhranil Das</span> <span class='phd'>Ph.D.</span><br>
-					<span class='subjects'>physics &middot; neuroscience &middot; vision &middot; psychedelics</span>
-				</div>
-				<div class='line'>
-					<span class='name'>Abhranil Das</span> <span class='phd'>Ph.D.</span><br>
-					<span class='subjects'>physics &middot; neuroscience &middot; vision &middot; psychedelics</span>
-				</div>
-				<div class='line'>
-					<span class='name'>Abhranil Das</span> <span class='phd'>Ph.D.</span><br>
-					<span class='subjects'>physics &middot; neuroscience &middot; vision &middot; psychedelics</span>
-				</div>
-				<div class='line'>
-					<span class='name'>Abhranil Das</span> <span class='phd'>Ph.D.</span><br>
-					<span class='subjects'>physics &middot; neuroscience &middot; vision &middot; psychedelics</span>
-				</div>
-				<div class='line'>
-					<span class='name'>Abhranil Das</span> <span class='phd'>Ph.D.</span><br>
-					<span class='subjects'>physics &middot; neuroscience &middot; vision &middot; psychedelics</span>
-				</div>
-				<div class='line'>
-					<span class='name'>Abhranil Das</span> <span class='phd'>Ph.D.</span><br>
-					<span class='subjects'>physics &middot; neuroscience &middot; vision &middot; psychedelics</span>
-				</div>
-				<div class='line'>
-					<span class='name'>Abhranil Das</span> <span class='phd'>Ph.D.</span><br>
-					<span class='subjects'>physics &middot; neuroscience &middot; vision &middot; psychedelics</span>
-				</div>
-				<div class='line'>
-					<span class='name'>Abhranil Das</span> <span class='phd'>Ph.D.</span><br>
-					<span class='subjects'>physics &middot; neuroscience &middot; vision &middot; psychedelics</span>
-				</div>
-				<div class='line'>
-					<span class='name'>Abhranil Das</span> <span class='phd'>Ph.D.</span><br>
-					<span class='subjects'>physics &middot; neuroscience &middot; vision &middot; psychedelics</span>
-				</div>
-			</div> -->
-			<span class='name'>Abhranil Das</span> <span class='phd'>Ph.D.</span><br>
-			<span class='subjects'>physics &middot; neuroscience &middot; vision &middot; psychedelics</span>
+				<span class='name'>Abhranil Das</span> <span class='phd'>Ph.D.</span><br>
+				<span class='subjects'>physics &middot; neuroscience &middot; vision &middot; psychedelics</span>
+			</div>
 		</div>
-	</div>
-	<div id='links'>
-		<a class='link' href='cv.pdf' target='_blank'>
-			<img class='icon-img' src='images/cv.svg'>
-			<!-- <img class='icon-img-glitch glitch' src='images/cv_glitched.gif'> -->
-			<span class='link-text'>
-				<!-- <div class='glitch'>
-					<div class='line'>
-						<span class='link-text'>cv</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>cv</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>cv</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>cv</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>cv</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>cv</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>cv</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>cv</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>cv</span>
-					</div>
-				</div> -->
-				cv
-			</span>
-		</a>
-		<a class='link' href='https://scholar.google.com/citations?user=EZuCIygAAAAJ&hl=en' target='_blank'>
-			<img class='icon-img' src='images/science.svg'>
-			<!-- <img class='icon-img-glitch glitch' src='images/research_glitched.gif'> -->
-			<span class='link-text'>
-				<!-- <div class='glitch'>
-					<div class='line'>
-						<span class='link-text'>research</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>research</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>research</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>research</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>research</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>research</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>research</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>research</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>research</span>
-					</div>
-				</div> -->
-				science
-			</span>
-		</a>
-		<a class='link' href='https://rss.com/podcasts/room-of-lives/' target='_blank'>
-			<img class='icon-img' src='images/podcast.svg'>
-			<!-- <img class='icon-img-glitch glitch' src='images/podcast_glitched.gif'> -->
-			<span class='link-text'>
-				<!-- <div class='glitch'>
-					<div class='line'>
-						<span class='link-text'>podcast</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>podcast</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>podcast</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>podcast</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>podcast</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>podcast</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>podcast</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>podcast</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>podcast</span>
-					</div>
-				</div> -->
-				podcast
-			</span>
-		</a>
-		<a class='link' href='https://blog.abhranil.net/' target='_blank'>
-			<img class='icon-img' src='images/blog.svg'>
-			<!-- <img class='icon-img-glitch glitch' src='images/blog_glitched.gif'> -->
-			<span class='link-text'>
-				<!-- <div class='glitch'>
-					<div class='line'>
-						<span class='link-text'>blog</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>blog</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>blog</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>blog</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>blog</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>blog</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>blog</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>blog</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>blog</span>
-					</div>
-				</div> -->
-				blog
-			</span>
-		</a>
-		<a class='link' href='https://www.flickr.com/photos/abhranildas/' target='_blank'>
-			<img class='icon-img' src='images/photos.svg'>
-			<!-- <img class='icon-img-glitch glitch' src='images/photos_glitched.gif'> -->
-			<span class='link-text'>
-				<!-- <div class='glitch'>
-					<div class='line'>
-						<span class='link-text'>photos</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>photos</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>photos</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>photos</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>photos</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>photos</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>photos</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>photos</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>photos</span>
-					</div>
-				</div> -->
-				photos
-			</span>
-		</a>
-		<a class='link' href='https://www.deviantart.com/abhranildas/gallery' target='_blank'>
-			<img class='icon-img' src='images/art.svg'>
-			<!-- <img class='icon-img-glitch glitch' src='images/art_glitched.gif'> -->
-			<span class='link-text'>
-				<!-- <div class='glitch'>
-					<div class='line'>
-						<span class='link-text'>art</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>art</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>art</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>art</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>art</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>art</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>art</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>art</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>art</span>
-					</div>
-				</div> -->
-				art
-			</span>
-		</a>
-		<a class='link' href='https://open.spotify.com/user/12124304252/playlists' target='_blank'>
-			<img class='icon-img' src='images/mixes.svg'>
-			<!-- <img class='icon-img-glitch glitch' src='images/mixes_glitched.gif'> -->
-			<span class='link-text'>
-				<!-- <div class='glitch'>
-					<div class='line'>
-						<span class='link-text'>mixes</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>mixes</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>mixes</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>mixes</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>mixes</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>mixes</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>mixes</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>mixes</span>
-					</div>
-					<div class='line'>
-						<span class='link-text'>mixes</span>
-					</div>
-				</div> -->
-				mixes
-			</span>
-		</a>
-	</div>
-</div>	
+		<div id='links'>
+			<a class='link' style='color: #E04BBD' onmouseover='hoverColour(this)' onmouseout='resetColour()' href='cv.pdf' target='_blank'>
+				<img class='icon-img' src='images/cv.svg'>
+				<span class='link-text'>
+					cv
+				</span>
+			</a>
+			<a class='link' style='color: #8960FC' onmouseover='hoverColour(this)' onmouseout='resetColour()' href='https://scholar.google.com/citations?user=EZuCIygAAAAJ&hl=en' target='_blank'>
+				<img class='icon-img' src='images/science.svg'>
+				<span class='link-text'>
+					science
+				</span>
+			</a>
+			<a class='link' style='color: #009eff' onmouseover='hoverColour(this)' onmouseout='resetColour()' href='https://rss.com/podcasts/room-of-lives/' target='_blank'>
+				<img class='icon-img' src='images/podcast.svg'>
+				<span class='link-text'>
+					podcast
+				</span>
+			</a>
+			<a class='link' style='color: #6ed31b' onmouseover='hoverColour(this)' onmouseout='resetColour()' href='https://blog.abhranil.net/' target='_blank'>
+				<img class='icon-img' src='images/blog.svg'>
+				<span class='link-text'>
+					blog
+				</span>
+			</a>
+			<a class='link' style='color: #DDAC0E' onmouseover='hoverColour(this)' onmouseout='resetColour()' href='https://www.flickr.com/photos/abhranildas/' target='_blank'>
+				<img class='icon-img' src='images/photos.svg'>
+				<span class='link-text'>
+					photos
+				</span>
+			</a>
+			<a class='link' style='color: #FD5802' onmouseover='hoverColour(this)' onmouseout='resetColour()' href='https://www.deviantart.com/abhranildas/gallery' target='_blank'>
+				<img class='icon-img' src='images/art.svg'>
+				<span class='link-text'>
+					art
+				</span>
+			</a>
+			<a class='link' style='color: #fd5757' onmouseover='hoverColour(this)' onmouseout='resetColour()' href='https://open.spotify.com/user/12124304252/playlists' target='_blank'>
+				<img class='icon-img' src='images/mixes.svg'>
+				<span class='link-text'>
+					mixes
+				</span>
+			</a>
+		</div>
+	</div>	
 </body>
-	<!-- <script type='text/javascript' src='perspective.js'></script> -->
-
 </html>

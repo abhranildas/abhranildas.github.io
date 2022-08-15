@@ -15,10 +15,23 @@ body {
     background-color: #009eff;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    animation: pageColor 10s 2s infinite linear both;
+    animation: pageColor 10s 2s infinite linear;
     font: 300 1.3em 'Fredoka', sans-serif;
     color: #444;
     perspective: 500px;
+}
+
+#hover-bg{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  background: radial-gradient(circle, rgba(255,255,255,1) 70%, rgba(255,255,255,0.8) 90%, rgba(255,255,255,.6) 100%);
+  #background-color:black;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: -1;
 }
 
 @keyframes appear {
@@ -91,23 +104,27 @@ body {
 @keyframes photoColor {
     0% {
         background-color: #009eff;
-        box-shadow: 2px 2px 3px 1px #009eff;
+        color: #009eff;
     }
     20% {
         background-color: #6ed31b;
-        box-shadow: 2px 2px 3px 1px #6ed31b;
+        color: #6ed31b;
     }
     40% {
         background-color: #ffcf00;
-        box-shadow: 2px 2px 3px 1px #ffcf00;
+        color: #ffcf00;
     }
     60% {
         background-color: #fd5757;
-        box-shadow: 2px 2px 3px 1px #fd5757;
+        color: #fd5757;
     }
     80% {
         background-color: #c526ff;
-        box-shadow: 2px 2px 3px 1px #c526ff;
+        color: #c526ff;
+    }
+    100% {
+        background-color: #009eff;
+        color: #009eff;
     }
 }
 
@@ -132,7 +149,7 @@ body {
     }
 }
 
-@keyframes linkColor {
+@keyframes textColor {
   0% {
     color: #009eff;
 }
@@ -155,8 +172,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    #transform: rotateX(7deg) rotateY(5deg);
-    animation: appear 2s ease-out backwards, rotate1 3s 5s linear, rotate2 25s 8s infinite linear;
+    animation: appear 2s .5s ease-out backwards, rotate1 3s 5s linear, rotate2 25s 8s infinite linear;
     pointer-events: none;
 }
 
@@ -172,12 +188,30 @@ body {
 
 .my-photo {
     border-radius: 50%;
-    box-shadow: 2px 2px 3px 1px #009eff;
+    width: 6em;
+    height: 6em;
+    transition: opacity 0.5s ease;
+    position: absolute;
+}
+
+.my-photo-bg
+{
+    border-radius: 50%;
+    box-shadow: 2px 2px 0px 0px;
     background-color: #009eff;
     animation: photoColor 10s 2s infinite linear both;
     width: 6em;
     height: 6em;
+    transition: opacity 0.5s ease;
 }
+
+#my-photo-bg-hover {
+  position: absolute;
+  opacity: 0;
+  animation: none;
+  transition: opacity 0.5s ease;
+}
+
 
 #my-text {
     margin: 0 0 0 20px;
@@ -202,7 +236,6 @@ body {
 
 #links {
     text-align: center;
-    #pointer-events: none;
 }
 
 .link {
@@ -213,10 +246,27 @@ body {
     margin: 1em .6em 0 .6em;
     text-decoration: none;
     font-size: .8em;
-    color: #009eff;
-    animation: linkColor 10s 2s infinite linear both;
-    transition: filter .3s ease-in-out, transform .3s ease-out;
+    #color: #009eff;
+    transition: filter .5s ease-out, transform .5s ease-out;
     pointer-events: auto;
+    filter: saturate(60%) contrast(60%) brightness(130%);
+}
+
+.link:hover {
+    transform: scale(1.05,1.05) translateY(-.3em) perspective(10em) rotateX(20deg) translateZ(.5em);
+    filter: none !important;
+}
+
+#links:hover .link {
+    filter: saturate(20%) contrast(60%) brightness(130%) blur(2px);
+}
+
+.link:hover .icon-img{    
+    box-shadow: 0px 15px 15px -10px;
+}
+
+.link:hover .link-text{    
+    filter: none;
 }
 
 .icon-img {
@@ -227,41 +277,18 @@ body {
     border: 1px solid white;
     background-color: white;
     box-shadow: 0px 0px 0px 0px rgb(103 197 255);
-    animation: shadowColor 10s 2s infinite linear both;
-    transition: box-shadow 0.3s ease-out, filter 0.3s ease-out;
-    filter: saturate(60%) contrast(60%) brightness(130%);
+    #animation: shadowColor 10s 2s infinite linear both;
+    transition: box-shadow 0.5s ease-out;
 }
 
 .link-text {
-    filter: saturate(0%);
     transition: filter 0.2s, text-shadow 0.2s;
-}
-
-.link:hover {
-    transform: scale(1.05,1.05) translateY(-.3em) perspective(10em) rotateX(20deg) translateZ(.5em);
-}
-
-.link:hover .icon-img{    
-    box-shadow: 0px 15px 15px -10px;
-    filter: none;
-}
-
-.link:hover .link-text{    
-    filter: none;
-}
-
-#links:hover > .link{
-    #filter: blur(5px);
-}
-
-#links .link:hover {
-    #filter: blur(0); 
 }
 
 .glitch {
   position: absolute;
   opacity: 0;
-  animation: glitchEffect 40s infinite linear;
+  animation: glitchEffect 20s infinite linear;
 }
 
 
