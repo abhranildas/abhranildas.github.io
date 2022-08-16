@@ -300,7 +300,7 @@ body {
     }
 
     #content {
-        animation: appear 2s ease-out both;
+        animation: appear 2s .5s ease-out both;
     }
 
 }
