@@ -16,7 +16,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     animation: pageColor 10s 2s infinite linear;
-    font: 300 1.3em 'Fredoka', sans-serif;
+    font: 300 1.6em 'Fredoka', sans-serif;
     color: #444;
     perspective: 500px;
 }
