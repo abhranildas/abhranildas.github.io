@@ -15,7 +15,7 @@ body {
     background-color: #009eff;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    animation: pageColor 10s 2s infinite linear;
+    animation: pageColor 10s 3s infinite linear;
     font: 300 1.6em 'Fredoka', sans-serif;
     color: #444;
     perspective: 500px;
@@ -32,6 +32,184 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   z-index: -1;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: appear 2s .5s ease-out backwards, rotate1 3s 5s linear, rotate2 25s 8s infinite linear;
+    pointer-events: none;
+}
+
+#content:hover {
+  animation-play-state: paused;
+}
+
+#my-card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.my-photo {
+    border-radius: 50%;
+    width: 6em;
+    height: 6em;
+    transition: opacity 0.5s ease;
+    position: absolute;
+}
+
+.my-photo-bg
+{
+    border-radius: 50%;
+    box-shadow: 2px 2px 0px 0px;
+    background-color: #009eff;
+    animation: photoColor 10s 3s infinite linear both;
+    width: 6em;
+    height: 6em;
+    transition: opacity 0.5s ease;
+}
+
+#my-photo-bg-hover {
+  position: absolute;
+  opacity: 0;
+  animation: none;
+  transition: background-color 0.5s ease, opacity 0.5s ease;
+}
+
+
+#my-text {
+    margin: 0 0 0 20px;
+    white-space: nowrap;
+    line-height: 1.1em;
+}
+
+.name {
+    font-size: 2em;
+    font-weight: 400;
+}
+
+.phd {
+    margin-left: 2px;
+    font-size: 1.4em;
+}
+
+.subjects {
+    font-size: .78em;
+    color: #888;
+}
+
+#links {
+    text-align: center;
+}
+
+.link {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1em .6em 0 .6em;
+    text-decoration: none;
+    font-size: .8em;
+    #color: #009eff;
+    transition: filter .5s ease-out, transform .5s ease-out;
+    pointer-events: auto;
+    filter: saturate(60%) contrast(60%) brightness(130%);
+}
+
+.link:hover {
+    transform: scale(1.05,1.05) translateY(-.3em) perspective(10em) rotateX(20deg) translateZ(.5em);
+    filter: none !important;
+}
+
+#links:hover .link {
+    filter: saturate(0%) contrast(60%) brightness(130%) blur(2px);
+}
+
+.link:hover .icon-img{    
+    box-shadow: 0px 15px 15px -10px;
+}
+
+.link:hover .link-text{    
+    filter: none;
+}
+
+.icon-img {
+    height: 3.5em;
+    width: 3.5em;
+    margin-bottom: 0.3em;
+    border-radius: 50%;
+    border: .3em solid white;
+    background-color: white;
+    transition: box-shadow 0.5s ease-out;
+}
+
+.link-text {
+    filter: saturate(0) brightness(0.5);
+    transition: filter 0.5s;
+}
+
+.glitch {
+  position: absolute;
+  opacity: 0;
+  animation: glitchEffect 20s infinite linear;
+}
+
+
+@media only screen and (max-device-width: 700px) {
+
+    body {
+        font-weight: 400;
+    }
+
+    #content {
+        animation: appear 2s .5s ease-out both;
+    }
+
+}
+
+@media only screen and (max-device-width: 700px) and (orientation:portrait) {
+
+    body {
+        font-size:  3em;
+        perspective: 1000px;
+    }
+
+    #my-card {
+        flex-direction:  column;
+        margin-bottom: 2em;
+        text-align: center;
+    }
+
+    .my-photo, .my-photo-bg {
+        width: 8em;
+        height: 8em;
+    }
+
+    #my-text {
+        margin: 3vh 0 0 0;
+    }
+
+}
+
+@media only screen and (max-device-width: 700px) and (orientation:landscape) {
+
+    body {
+        font-size:  1.8em;
+    }
+
+}
+
+@media (any-hover: none) {
+/*    .glitch {
+      animation: glitchEffect 20s infinite linear both;
+  } */
+  .link {
+    filter: saturate(70%) contrast(70%) brightness(120%);
+}
+
 }
 
 @keyframes appear {
@@ -150,199 +328,61 @@ body {
 }
 
 @keyframes textColor {
+    0% {
+        color: #009eff;
+        }
+    20% {
+        color: #629f1a;
+        }
+    40% {
+        color: #d79a1d;
+        }
+    60% {
+        color: #fd5757;
+        }
+    80% {
+        color: #da75ff;
+        }
+}
+
+@keyframes glitchEffect {
   0% {
-    color: #009eff;
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  30.5% {
+    opacity: 1;
+  }
+  31% {
+    opacity: 0;
+  }
+  61% {
+    opacity: 0;
+  }
+  63% {
+    opacity: 1;
+    filter: blur(1px);
+  }
+  67% {
+    opacity: 1;
+    filter: blur(2px);
 }
-20% {
-    color: #629f1a;
-}
-40% {
-    color: #d79a1d;
-}
-60% {
-    color: #fd5757;
-}
-80% {
-    color: #da75ff;
-}
-}
-
-#content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    animation: appear 2s .5s ease-out backwards, rotate1 3s 5s linear, rotate2 25s 8s infinite linear;
-    pointer-events: none;
-}
-
-#content:hover {
-  animation-play-state: paused;
-}
-
-#my-card {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1em;
-}
-
-.my-photo {
-    border-radius: 50%;
-    width: 6em;
-    height: 6em;
-    transition: opacity 0.5s ease;
-    position: absolute;
+  69% {
+    opacity: 0;
+  }
+  96% {
+    opacity: 0;
+  }
+  97% {
+    opacity: 1;
+  }
+  98% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
-.my-photo-bg
-{
-    border-radius: 50%;
-    box-shadow: 2px 2px 0px 0px;
-    background-color: #009eff;
-    animation: photoColor 10s 2s infinite linear both;
-    width: 6em;
-    height: 6em;
-    transition: opacity 0.5s ease;
-}
-
-#my-photo-bg-hover {
-  position: absolute;
-  opacity: 0;
-  animation: none;
-  transition: background-color 0.5s ease, opacity 0.5s ease;
-}
-
-
-#my-text {
-    margin: 0 0 0 20px;
-    white-space: nowrap;
-    line-height: 1.1em;
-}
-
-.name {
-    font-size: 2em;
-    font-weight: 400;
-}
-
-.phd {
-    margin-left: 2px;
-    font-size: 1.4em;
-}
-
-.subjects {
-    font-size: .78em;
-    color: #888;
-}
-
-#links {
-    text-align: center;
-}
-
-.link {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    margin: 1em .6em 0 .6em;
-    text-decoration: none;
-    font-size: .8em;
-    #color: #009eff;
-    transition: filter .5s ease-out, transform .5s ease-out;
-    pointer-events: auto;
-    filter: saturate(60%) contrast(60%) brightness(130%);
-}
-
-.link:hover {
-    transform: scale(1.05,1.05) translateY(-.3em) perspective(10em) rotateX(20deg) translateZ(.5em);
-    filter: none !important;
-}
-
-#links:hover .link {
-    filter: saturate(20%) contrast(60%) brightness(130%) blur(2px);
-}
-
-.link:hover .icon-img{    
-    box-shadow: 0px 15px 15px -10px;
-}
-
-.link:hover .link-text{    
-    filter: none;
-}
-
-.icon-img {
-    height: 3.5em;
-    width: 3.5em;
-    margin-bottom: 0.3em;
-    border-radius: 50%;
-    border: 1px solid white;
-    background-color: white;
-    #box-shadow: 0px 0px 0px 0px rgb(103 197 255);
-    #animation: shadowColor 10s 2s infinite linear both;
-    transition: box-shadow 0.5s ease-out;
-}
-
-.link-text {
-    filter: saturate(0) brightness(0.5);
-    transition: filter 0.5s;
-}
-
-.glitch {
-  position: absolute;
-  opacity: 0;
-  animation: glitchEffect 20s infinite linear;
-}
-
-
-@media only screen and (max-device-width: 700px) {
-
-    body {
-        font-weight: 400;
-    }
-
-    #content {
-        animation: appear 2s .5s ease-out both;
-    }
-
-}
-
-@media only screen and (max-device-width: 700px) and (orientation:portrait) {
-
-    body {
-        font-size:  3em;
-        perspective: 1000px;
-    }
-
-    #my-card {
-        flex-direction:  column;
-        margin-bottom: 2em;
-        text-align: center;
-    }
-
-    .my-photo, .my-photo-bg {
-        width: 8em;
-        height: 8em;
-    }
-
-    #my-text {
-        margin: 3vh 0 0 0;
-    }
-
-}
-
-@media only screen and (max-device-width: 700px) and (orientation:landscape) {
-
-    body {
-        font-size:  1.8em;
-    }
-
-}
-
-@media (any-hover: none) {
-/*    .glitch {
-      animation: glitchEffect 20s infinite linear both;
-  } */
-  .link {
-    filter: saturate(70%) contrast(70%) brightness(120%);
-}
-
-}
