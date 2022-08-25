@@ -363,11 +363,9 @@ body {
   }
   63% {
     opacity: 1;
-    filter: blur(1px);
   }
   67% {
     opacity: 1;
-    filter: blur(2px);
 }
   69% {
     opacity: 0;
