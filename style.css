@@ -11,11 +11,11 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: radial-gradient(circle, rgba(255,255,255,1) 70%, rgba(255,255,255,0.8) 90%, rgba(255,255,255,.6) 100%);
+    background: radial-gradient(circle, rgba(255,255,255,1) 20%, rgba(255,255,255,0.8) 40%, rgba(255,255,255,.6) 60%, rgba(255,255,255,.4) 80%, rgba(255,255,255,.2) 100%);
     background-color: #009eff;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    animation: pageColor 10s 3s infinite linear;
+    animation: pageColorAppear 5s ease both, pageColorCycle 10s 5s infinite linear;
     font: 300 1.6em 'Fredoka', sans-serif;
     color: #444;
     perspective: 500px;
@@ -39,7 +39,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    animation: appear 2s .5s ease-out backwards, rotate1 3s 5s linear, rotate2 25s 8s infinite linear;
+    animation: appear 2s .5s ease backwards, rotate1 3s 7s ease-in-out, rotate2 25s 10s infinite linear;
     pointer-events: none;
 }
 
@@ -261,7 +261,21 @@ body {
     }
 }
 
-@keyframes pageColor {
+
+@keyframes pageColorAppear {
+    0% {
+    background-size: 100% 100%;
+    background-position: 50% 50%;
+    }
+    100% {
+    background-size: 200% 200%;
+    background-position: 50% 50%;
+
+    }
+}
+
+
+@keyframes pageColorCycle {
     0% {
         background-color: #009eff;
     }
