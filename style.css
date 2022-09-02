@@ -215,9 +215,9 @@ body {
 
 @keyframes appear {
     0% {
-        filter: blur(10px);
+        filter: blur(20px);
         opacity: 0;
-        transform: scale(.9,.9);
+        transform: scale(.8,.8) rotateX(-20deg) rotateY(0deg);
     }
     100% {
         filter: blur(0px);
