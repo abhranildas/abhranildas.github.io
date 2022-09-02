@@ -11,10 +11,11 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: radial-gradient(circle, rgba(255,255,255,1) 20%, rgba(255,255,255,0.8) 40%, rgba(255,255,255,.6) 60%, rgba(255,255,255,.4) 80%, rgba(255,255,255,.2) 100%);
+    background: radial-gradient(circle, rgba(255,255,255,1) 10%, rgba(255,255,255,0.8) 20%, rgba(255,255,255,.6) 30%, rgba(255,255,255,.4) 40%, rgba(255,255,255,.2) 50%, rgba(255,255,255,0) 60%);
     background-color: #009eff;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-position: 50% 50%;
     animation: pageColorAppear 5s ease both, pageColorCycle 10s 5s infinite linear;
     font: 300 1.6em 'Fredoka', sans-serif;
     color: #444;
@@ -39,7 +40,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    animation: appear 2s .5s ease backwards, rotate1 3s 7s ease-in-out, rotate2 25s 10s infinite linear;
+    animation: appear 2s 1s ease backwards, rotate1 3s 7s ease-in-out, rotate2 25s 10s infinite linear;
     pointer-events: none;
 }
 
@@ -66,7 +67,7 @@ body {
     border-radius: 50%;
     box-shadow: 2px 2px 0px 0px;
     background-color: #009eff;
-    animation: photoColor 10s 3s infinite linear both;
+    animation: photoColor 10s 5s infinite linear both;
     width: 6em;
     height: 6em;
     transition: opacity 0.5s ease;
@@ -265,12 +266,9 @@ body {
 @keyframes pageColorAppear {
     0% {
     background-size: 100% 100%;
-    background-position: 50% 50%;
     }
     100% {
-    background-size: 200% 200%;
-    background-position: 50% 50%;
-
+    background-size: 400% 400%;
     }
 }
 
