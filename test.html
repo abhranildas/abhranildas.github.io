@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenCV Image Processor</title>
+    <script async src="https://docs.opencv.org/master/opencv.js" onload="onOpenCVReady()"></script>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 20px; }
+        canvas { margin-top: 10px; border: 1px solid black; }
+    </style>
+</head>
+<body>
+    <h2>Upload an Image for Processing</h2>
+    <input type="file" id="imageUpload" accept="image/*" disabled>
+    <br>
+    <canvas id="canvas"></canvas>
+    <canvas id="canvasOutput"></canvas>
+    
+    <script>
+        function onOpenCVReady() {
+            document.getElementById('imageUpload').disabled = false;
+            console.log('OpenCV.js is ready!');
+        }
+
+        document.getElementById('imageUpload').addEventListener('change', function(event) {
+            let file = event.target.files[0];
+            if (!file) return;
+
+            let img = new Image();
+            img.onload = function() {
+                let canvas = document.getElementById('canvas');
+                let ctx = canvas.getContext('2d');
+                canvas.width = img.width;
+                canvas.height = img.height;
+                ctx.drawImage(img, 0, 0);
+
+                if (typeof cv !== 'undefined' && cv.getBuildInformation) {
+                    processImage(canvas);
+                } else {
+                    console.error('OpenCV.js not fully loaded yet!');
+                }
+            };
+            img.src = URL.createObjectURL(file);
+        });
+
+        function processImage(canvas) {
+            let src = cv.imread(canvas);
+            let dst = new cv.Mat();
+            cv.cvtColor(src, dst, cv.COLOR_RGBA2GRAY); // Convert to grayscale
+            
+            let outputCanvas = document.getElementById('canvasOutput');
+            outputCanvas.width = canvas.width;
+            outputCanvas.height = canvas.height;
+            cv.imshow('canvasOutput', dst);
+            
+            src.delete();
+            dst.delete();
+        }
+    </script>
+</body>
+</html>
