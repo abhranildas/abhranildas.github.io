@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400&display=swap');
+
 /* General Reset */
 * {
     box-sizing: border-box;
@@ -7,12 +9,13 @@
 }
 
 body {
-    padding: 100px;
+    padding: 50px 100px;
 }
 
 header {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
+    font: 300 1.6em 'Fredoka', sans-serif
 }
 
 /* --- Gallery Grid --- */
