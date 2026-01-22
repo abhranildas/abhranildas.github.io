@@ -1,0 +1,165 @@
+/* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: white;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* --- Gallery Grid --- */
+#gallery-container {
+    display: grid;
+    /* Creates a responsive grid that fits as many columns as possible */
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 50px;
+    max-width: 1200px;
+    margin: 50px 100px;
+}
+
+.gallery-item {
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 6px;
+    border: 1px solid #cfcfcf;
+    transition: all 0.2s;
+    box-shadow: -4px 5px 2px #e3e3e3;
+    padding: 10px;
+}
+
+.gallery-item:hover {
+    /* 1. Move the tile 10px Right and 10px Up */
+    transform: translate(6px, -6px) scale(1.04);
+    
+    /* 2. Shift the shadow to the bottom-left (-2px X, +6px Y) 
+       and increase the blur (12px) to make it look "lifted". */
+    box-shadow: -8px 10px 5px #e5e5e5;
+}
+
+.gallery-item img {
+    width: 100%;
+    /* Keeps the tile square */
+    aspect-ratio: 1 / 1;
+    
+    /* UPDATED: 'contain' ensures the whole image is visible */
+    object-fit: contain;    
+    
+    display: block;
+}
+
+/* --- Lightbox Modal (UPDATED) --- */
+#lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95); /* Slightly darker background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none; 
+    transition: opacity 0.3s ease;
+}
+
+#lightbox.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* We remove the white background card styling here.
+   Now it's just a transparent wrapper to center the image.
+*/
+.lightbox-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative; /* Allows child elements to position relative to this if needed */
+}
+
+#lightbox-img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5); /* Adds a subtle glow/shadow to the image */
+    border-radius: 4px;
+}
+
+/* The caption is now fixed to the bottom right of the SCREEN, 
+   independent of the image size.
+*/
+.lightbox-caption {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 300px;
+    
+    background-color: rgba(20, 20, 20, 0.9); /* Dark semi-transparent box */
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    backdrop-filter: blur(5px); /* Adds a nice blur effect behind the text */
+}
+
+#lightbox-title {
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+#lightbox-date {
+    font-size: 0.85em;
+    color: #aaa;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+#lightbox-desc {
+    font-size: 0.95em;
+    line-height: 1.4;
+}
+
+#close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    z-index: 1001; /* Ensure it sits above everything */
+}
+
+/* --- Mobile Adjustments --- */
+@media (max-width: 768px) {
+    /* On mobile, move caption to a full-width bar at the bottom */
+    .lightbox-caption {
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: 100%;
+        border-radius: 0;
+        border: none;
+        border-top: 1px solid #333;
+    }
+
+    /* Make image slightly smaller to make room for the bottom text bar */
+    #lightbox-img {
+        max-height: 70vh; 
+        margin-bottom: 100px; /* Push image up so text doesn't cover it */
+    }
+}
