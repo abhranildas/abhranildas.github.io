@@ -42,7 +42,7 @@ header {
     
     /* 2. Shift the shadow to the bottom-left (-2px X, +6px Y) 
        and increase the blur (12px) to make it look "lifted". */
-    box-shadow: -8px 10px 5px #e5e5e5;
+    box-shadow: -8px 10px 7px #e5e5e5;
 }
 
 .gallery-item img {
