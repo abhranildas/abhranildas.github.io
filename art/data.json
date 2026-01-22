@@ -184,14 +184,12 @@
         "description": "Pen and alcohol marker."
     },
 
-
     {
         "filename": "2022 05 13 tintin looks.webp",
         "title": "Tintin sees something",
         "date": "2022-05-13",
         "description": "Pen on paper, digital smoothing."
     },
-
 
     {
         "filename": "2022 05 13 earth heart.webp",
@@ -200,11 +198,45 @@
         "description": "Markers on canvas."
     },
 
-
     {
         "filename": "2025 12 16 Behnam and Me.webp",
         "title": "Behnam and Me",
         "date": "2025-12-16",
         "description": "Alcohol markers on paper."
+    },
+
+    {
+        "filename": "2018 03 10 Tycho Tree.webp",
+        "title": "Tycho tree",
+        "date": "2018-03-10",
+        "description": "Tree silhouette inspired by Tycho. Painted at Alicia's dorm, on canvas."
+    },    
+
+    {
+        "filename": "2020 11 14 Canoes sculpture.webp",
+        "title": "Canoes Sculpture",
+        "date": "2020-11-14",
+        "description": "Drawing of sculpture on UT Austin campus. Pen on paper."
+    },    
+
+    {
+        "filename": "2020 04 16 Cowboy Tintin.webp",
+        "title": "Cowboy Tintin",
+        "date": "2020-04-16",
+        "description": "Pen on paper."
+    },
+
+    {
+        "filename": "2025 10 17 Caian and Raissa.webp",
+        "title": "Caian and Raissa",
+        "date": "2025-10-17",
+        "description": "Pen and alcohol markers on paper."
+    },
+
+    {
+        "filename": "2025 12 08 Octopus and Astronaut.webp",
+        "title": "Octopus and Astronaut",
+        "date": "2025-12-08",
+        "description": "Pen on paper. Gift for a Cusco girl who left me too soon."
     }
 ]
