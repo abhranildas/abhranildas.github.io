@@ -44,11 +44,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 3. Function to open lightbox
     function openLightbox(data) {
-        lbImg.src = `${data.filename}`;
+        // 1. Set the content
+        lbImg.src = data.filename;
         lbTitle.textContent = data.title;
-        lbDate.textContent = data.date;
         lbDesc.textContent = data.description;
         
+        // 2. Format the date
+        const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
+                        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        const dateParts = data.date.split('-');
+        const year = dateParts[0];
+        const monthIndex = parseInt(dateParts[1]) - 1; 
+        const day = parseInt(dateParts[2]);
+        lbDate.textContent = `${year} ${months[monthIndex]} ${day}`;
+
+        // 3. REMOVED: The logic that checked width/height is gone.
+        // We now trust the CSS to put the caption on the right for laptops.
+
+        // 4. Show the modal
         lightbox.classList.add('active');
     }
 

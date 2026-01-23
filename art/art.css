@@ -5,7 +5,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font: 300 1em 'Fredoka', sans-serif;
 }
 
 body {
@@ -15,12 +15,12 @@ body {
 header {
     text-align: center;
     margin: 30px 0px 70px 0px;
-    font: 300 2.5em 'Fredoka', sans-serif;
     color: #444;
+    font-size: 2.5em;
 }
 
 #name {
-    font: 400 1em 'Fredoka', sans-serif;
+    font-weight: 400;
 }
 
 /* --- Gallery Grid --- */
@@ -63,20 +63,20 @@ header {
     display: block;
 }
 
-/* --- Lightbox Modal (UPDATED) --- */
+/* --- Lightbox Modal (Refined Layout) --- */
 #lightbox {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.95); /* Slightly darker background */
+    background-color: rgba(0, 0, 0, 0.95);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
     opacity: 0;
-    pointer-events: none; 
+    pointer-events: none;
     transition: opacity 0.3s ease;
 }
 
@@ -85,53 +85,74 @@ header {
     pointer-events: auto;
 }
 
-/* We remove the white background card styling here.
-   Now it's just a transparent wrapper to center the image.
-*/
+/* The Container */
 .lightbox-content {
     display: flex;
-    justify-content: center;
+    /* Desktop Default: Side-by-side (Row) */
+    flex-direction: row; 
     align-items: center;
-    width: 100%;
-    height: 100%;
-    position: relative; /* Allows child elements to position relative to this if needed */
-}
-
-#lightbox-img {
-    max-width: 90vw;
-    max-height: 90vh;
-    object-fit: contain;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5); /* Adds a subtle glow/shadow to the image */
-    border-radius: 4px;
-}
-
-/* The caption is now fixed to the bottom right of the SCREEN, 
-   independent of the image size.
-*/
-.lightbox-caption {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 300px;
+    justify-content: center;
     
-    background-color: rgba(20, 20, 20, 0.9); /* Dark semi-transparent box */
+    /* Ensure it fits within the screen with some padding */
+    width: auto;
+    max-width: 90%;
+    max-height: 90vh;
+    
+    position: relative;
+    background: transparent;
+    gap: 30px; /* Space between image and caption */
+}
+
+/* The Image */
+#lightbox-img {
+    /* Allow image to shrink if needed, but grow to fill space */
+    flex: 1 1 auto; 
+    
+    /* These limits prevent the image from overflowing the flex container */
+    max-width: 100%; 
+    max-height: 90vh;
+    
+    object-fit: contain;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    border-radius: 4px;
+    
+    /* Crucial for flexbox image sizing */
+    min-width: 0; 
+    min-height: 0;
+}
+
+/* The Caption */
+.lightbox-caption {
+    /* REMOVED position: fixed. Now it flows naturally in the flexbox */
+    position: static;
+    
+    /* Fixed width for the sidebar on desktop */
+    width: 320px;
+    min-width: 320px; /* Prevents it from getting squished */
+    
+    background-color: rgba(20, 20, 20, 0.6);
     color: #fff;
     padding: 20px;
     border-radius: 8px;
     border: 1px solid #333;
-    backdrop-filter: blur(5px); /* Adds a nice blur effect behind the text */
+    backdrop-filter: blur(10px);
+    
+    /* If the description is huge, scroll internally */
+    max-height: 80vh;
+    overflow-y: auto;
 }
 
 #lightbox-title {
     margin-bottom: 5px;
     font-size: 1.2rem;
+    font-family: 'Fredoka', sans-serif;
+    font-weight:100;
 }
 
 #lightbox-date {
     font-size: 0.85em;
     color: #aaa;
     margin-bottom: 10px;
-    font-style: italic;
 }
 
 #lightbox-desc {
@@ -140,33 +161,47 @@ header {
 }
 
 #close-btn {
-    position: absolute;
+    /* UPDATED: Fixed ensures it stays in the screen corner */
+    position: fixed; 
     top: 20px;
     right: 30px;
+    
     color: white;
     font-size: 40px;
     font-weight: bold;
     cursor: pointer;
     user-select: none;
-    z-index: 1001; /* Ensure it sits above everything */
+    z-index: 1005; /* High z-index to sit on top of everything */
 }
 
 /* --- Mobile Adjustments --- */
-@media (max-width: 768px) {
-    /* On mobile, move caption to a full-width bar at the bottom */
-    .lightbox-caption {
-        bottom: 0;
-        right: 0;
-        left: 0;
-        width: 100%;
-        border-radius: 0;
-        border: none;
-        border-top: 1px solid #333;
+@media (max-width: 900px) {
+    .lightbox-content {
+        /* Switch to Vertical Stack on Tablets/Mobile */
+        flex-direction: column;
+        width: 95%;
     }
 
-    /* Make image slightly smaller to make room for the bottom text bar */
+    .lightbox-caption {
+        /* Caption becomes a bottom bar */
+        width: 100%;
+        min-width: auto;
+        max-height: 30vh; /* Limit height so it doesn't cover whole screen */
+        border-radius: 8px 8px 0 0; /* Round top corners only */
+        background-color: rgba(10, 10, 10, 0.95); /* Darker on mobile for readability */
+        margin-top: 10px;
+        position: relative;
+        bottom: auto;
+        right: auto;
+    }
+
     #lightbox-img {
-        max-height: 70vh; 
-        margin-bottom: 100px; /* Push image up so text doesn't cover it */
+        /* Leave room for the caption */
+        max-height: 60vh;
+    }
+    
+    #close-btn {
+        top: 10px;
+        right: 20px;
     }
 }
